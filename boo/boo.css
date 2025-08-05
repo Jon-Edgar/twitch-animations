@@ -1,0 +1,43 @@
+#boo-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1920;
+  width: 1080px;
+}
+#boo-group #boo-body-image {
+  position: relative;
+  height: 600px;
+  width: 600px;
+}
+#boo-group #boo-arm-image {
+  position: relative;
+  height: 600px;
+  width: 600px;
+}
+
+#tomato-1-group {
+  height: 100px;
+  width: 100px;
+}
+#tomato-1-group #boo-tomato-1-image {
+  height: 100px;
+  width: 100px;
+}
+#tomato-1-group #boo-splat-1-image {
+  height: 100px;
+  width: 100px;
+}
+
+#tomato-2-group {
+  height: 100px;
+  width: 100px;
+}
+#tomato-2-group #boo-tomato-2-image {
+  height: 100px;
+  width: 100px;
+}
+#tomato-2-group #boo-splat-2-image {
+  height: 100px;
+  width: 100px;
+}
