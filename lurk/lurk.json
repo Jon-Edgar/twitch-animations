@@ -1,0 +1,10 @@
+{
+  "lurkerImage": {
+    "type": "image-input",
+    "label": "Lurker Image"
+  },
+   "lurkButton": {
+    "type": "button",
+    "label": "Test animation"
+  }
+}

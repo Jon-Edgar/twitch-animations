@@ -1,0 +1,39 @@
+#paw-image {
+  height: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+}
+
+#fish-image {
+  height: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+}
+
+#splat-image {
+  height: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+}
+
+#sub-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: red;
+  max-width: 300px;
+  max-height: 100px;
+  opacity: 1;
+}
+
+#subscribed {
+  font-size: 5rem;
+  color: red;
+}
