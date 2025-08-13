@@ -1,0 +1,110 @@
+{
+  "lurkButton": {
+    "type": "button",
+    "label": "Test !Lurk"
+  },
+
+  "ghostButton": {
+    "type": "button",
+    "label": "Test !Ghost"
+  },
+
+  "booButton": {
+    "type": "button",
+    "label": "Test !Boo"
+  },
+
+  "cameraDropdown": {
+    "type": "dropdown",
+    "label": "Camera location",
+    "value": "top-right",
+    "options": {
+      "top-right": "top-right",
+      "bottom-right": "bottom-right",
+      "bottom-left": "bottom-left",
+      "top-left": "top-left"
+    }
+  },
+
+  "!Lurk": {
+    "label": "!Lurk"
+  },
+
+  "lurkerImage": {
+    "type": "image-input",
+    "label": "Lurker Image"
+  },
+
+  "!Ghost": {
+    "label": "!Ghost"
+  },
+  "ghostImage": {
+    "type": "image-input",
+    "label": "Ghost Image"
+  },
+
+  "!Boo": {
+    "label": "!Boo"
+  },
+  "booBodyImage": {
+    "type": "image-input",
+    "label": "Boo body Image"
+  },
+  "booArmImage": {
+    "type": "image-input",
+    "label": "Boo Arm Image"
+  },
+  "booTomato1Image": {
+    "type": "image-input",
+    "label": "Boo Tomato 1 Image"
+  },
+  "booSplat1Image": {
+    "type": "image-input",
+    "label": "Boo Splat 1 Image"
+  },
+  "booTomato2Image": {
+    "type": "image-input",
+    "label": "Boo Tomato 2 Image"
+  },
+  "booSplat2Image": {
+    "type": "image-input",
+    "label": "Boo Splat 2 Image"
+  },
+
+  "--Follow--": {
+    "label": "--Follow--"
+  },
+  "cat1Image": {
+    "type": "image-input",
+    "label": "Cat 1 Image"
+  },
+  "cat2Image": {
+    "type": "image-input",
+    "label": "Cat 2 Image"
+  },
+  "cat3Image": {
+    "type": "image-input",
+    "label": "Cat 3 Image"
+  },
+  "mouseImage": {
+    "type": "image-input",
+    "label": "Mouse Image"
+  },
+
+  "--Subscribe--": {
+    "label": "--Subscribe--"
+  },
+
+  "pawImage": {
+    "type": "image-input",
+    "label": "Paw Image"
+  },
+  "fishImage": {
+    "type": "image-input",
+    "label": "Fish Image"
+  },
+  "splatImage": {
+    "type": "image-input",
+    "label": "Splat Image"
+  }
+}
