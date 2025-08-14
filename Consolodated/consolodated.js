@@ -15,27 +15,14 @@ let animationCDFlag = false;
 const LURK_TYPES = { TOP: "top", RIGHT: "right", BOTTOM: "bottom", LEFT: "left" };
 const lurkerImage = document.getElementById("lurk-image");
 let lurkImage;
-
-// !subscribe
-const pawImageElement = document.getElementById("paw-image");
-const fishImageElement = document.getElementById("fish-image");
-const splatImageElement = document.getElementById("splat-image");
+let lurkSound;
 
 // !ghost
 const GHOST_TYPES = { CW: "cw", CCW: "ccw" };
 
 const ghostImageElement = document.getElementById("ghost-image");
 let ghostImage;
-
-// !follow
-const cat1ImageElement = document.getElementById("cat-1-image");
-let cat1Image;
-const cat2ImageElement = document.getElementById("cat-2-image");
-let cat2Image;
-const cat3ImageElement = document.getElementById("cat-3-image");
-let cat3Image;
-const mouseImageElement = document.getElementById("mouse-image");
-let mouseImage;
+let ghostSound;
 
 // !boo
 const BOO_TYPES = { TOP_RIGHT_T1: "top-right-t1", TOP_RIGHT_T2: "top-right-t2", BOTTOM_RIGHT_T1: "bottom-right-t1", BOTTOM_RIGHT_T2: "bottom-right-t2", BOTTOM_LEFT_T1: "bottom-left-t1", BOTTOM_LEFT_T2: "bottom-left-t2", TOP_LEFT_T1: "top-left-t1", TOP_LEFT_T2: "top-left-t2", };
@@ -56,6 +43,25 @@ const booTomato2ImageElement = document.getElementById("boo-tomato-2-image");
 let booTomato2Image;
 const booSplat2ImageElement = document.getElementById("boo-splat-2-image");
 let booSplat2Image;
+
+let booSound
+
+// --follow--
+const cat1ImageElement = document.getElementById("cat-1-image");
+let cat1Image;
+const cat2ImageElement = document.getElementById("cat-2-image");
+let cat2Image;
+const cat3ImageElement = document.getElementById("cat-3-image");
+let cat3Image;
+const mouseImageElement = document.getElementById("mouse-image");
+let mouseImage;
+let followSound;
+
+// --subscribe--
+const pawImageElement = document.getElementById("paw-image");
+const fishImageElement = document.getElementById("fish-image");
+const splatImageElement = document.getElementById("splat-image");
+let subSound;
 
 const startTimer = () => {
   clearInterval(timerInterval);
@@ -110,6 +116,8 @@ const handleLurk = () => {
 const startLurk = (location = "") => {
   const timeline = gsap.timeline();
 
+  lurkSound.play()
+
   if (location === LURK_TYPES.TOP) {
     const randX = getRandomNumber(0, 1280);
     timeline.fromTo( "#lurk-image", { rotate: 180, opacity: 1, x: randX, y: -600 }, { x: randX, y: -70, duration: 1 } );
@@ -158,6 +166,8 @@ const handleGhost = () => {
 
 const startGhost = (version = "") => {
   const timeline = gsap.timeline();
+
+  ghostSound.play()
 
   const randX = getRandomNumber(0, 1000); // 0 - 1000
   const randY = getRandomNumber(-100, 100); // -100 - 100
@@ -214,6 +224,8 @@ const handleBoo = () => {
 const startBoo = (location = "") => {
   const timeline = gsap.timeline();
 
+  booSound.play()
+  
   if (location === BOO_TYPES.TOP_RIGHT_T1) {
     const tomatoStart = {x: 1000, y: -450}
     const tomatoEnd = {x: 1750, y: -1100}
@@ -326,6 +338,8 @@ const startSubscribe = (name) => {
   animationCDFlag = true;
   const timeline = gsap.timeline();
 
+  subSound.play()
+
   timeline.to("#fish-image", { scale: 1, duration: 1.0, rotate: 5 });
   timeline.to("#splat-image", { scale: 1, duration: 0.1 });
   timeline.to("#sub-name", { opacity: 1, duration: 1 }, 1);
@@ -369,6 +383,8 @@ const handleFollower = (name = "test follow") => {
 
 const startFollower = () => {
   const timeline = gsap.timeline();
+
+  followSound.play()
 
   timeline.fromTo("#cat-1-image", { opacity: 0 }, { opacity: 1, duration: 1 });
   timeline.fromTo("#follower", { opacity: 0 }, { opacity: 1, duration: 1 }, 1);
@@ -423,6 +439,9 @@ window.addEventListener("onWidgetLoad", function (obj) {
   const splatImage = fieldData["splatImage"];
   splatImageElement.src = splatImage;
 
+  const subscribeSound = fieldData.subSound
+  subSound = new Audio(subscribeSound)
+
   // !follow
   cat1Image = fieldData["cat1Image"];
   cat1ImageElement.src = cat1Image;
@@ -436,13 +455,22 @@ window.addEventListener("onWidgetLoad", function (obj) {
   mouseImage = fieldData["mouseImage"];
   mouseImageElement.src = mouseImage;
 
+  const followerSound = fieldData.followSound
+  followSound = new Audio(followerSound)
+
   // !lurk
   lurkImage = fieldData["lurkerImage"];
   lurkerImage.src = lurkImage;
 
+  const lurkererSound = fieldData.lurkSound
+  lurkSound = new Audio(lurkererSound)
+
   // !ghost
   ghostImage = fieldData["ghostImage"];
   ghostImageElement.src = ghostImage;
+
+  const ghosterSound = fieldData.ghostSound
+  ghostSound = new Audio (ghosterSound)
 
   // !boo
   cameraLocation = fieldData.cameraDropdown;
@@ -464,6 +492,9 @@ window.addEventListener("onWidgetLoad", function (obj) {
 
   booSplat2Image = fieldData["booSplat2Image"];
   booSplat2ImageElement.src = booSplat2Image;
+
+  const booerSound = fieldData.booSound
+  booSound = new Audio (booerSound)
 
   resetAllAnimations();
 });

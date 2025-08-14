@@ -1,4 +1,11 @@
 {
+  "booSound": {
+    "name": "booSound",
+    "type": "sound-input",
+    "label": "Boo sound",
+    "value": ""
+  },
+
   "lurkButton": {
     "type": "button",
     "label": "Test !Lurk"
@@ -30,6 +37,13 @@
     "label": "!Lurk"
   },
 
+  "lurkSound": {
+    "name": "lurkSound",
+    "type": "sound-input",
+    "label": "Lurk sound",
+    "value": ""
+  },
+
   "lurkerImage": {
     "type": "image-input",
     "label": "Lurker Image"
@@ -37,6 +51,12 @@
 
   "!Ghost": {
     "label": "!Ghost"
+  },
+  "ghostSound": {
+    "name": "ghostSound",
+    "type": "sound-input",
+    "label": "Ghost sound",
+    "value": ""
   },
   "ghostImage": {
     "type": "image-input",
@@ -74,6 +94,12 @@
   "--Follow--": {
     "label": "--Follow--"
   },
+  "followSound": {
+    "name": "followSound",
+    "type": "sound-input",
+    "label": "Follower sound",
+    "value": ""
+  },
   "cat1Image": {
     "type": "image-input",
     "label": "Cat 1 Image"
@@ -94,7 +120,12 @@
   "--Subscribe--": {
     "label": "--Subscribe--"
   },
-
+  "subSound": {
+    "name": "subSound",
+    "type": "sound-input",
+    "label": "Subscribe sound",
+    "value": ""
+  },
   "pawImage": {
     "type": "image-input",
     "label": "Paw Image"
