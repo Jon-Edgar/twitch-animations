@@ -502,6 +502,9 @@ window.addEventListener("onWidgetLoad", function (obj) {
 window.addEventListener("onEventReceived", function (obj) {
   if (!obj) return;
 
+  console.log("incoming event")
+  console.log(obj)
+
   const listener = obj.detail.listener;
   const eventListener = obj.detail.event.listener;
   const eventType = obj.detail.event.type;

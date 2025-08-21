@@ -1,9 +1,7 @@
 {
-  "booSound": {
-    "name": "booSound",
-    "type": "sound-input",
-    "label": "Boo sound",
-    "value": ""
+  "animationCheckbox": {
+    "type": "checkbox",
+    "label": "Allow animations?"
   },
 
   "lurkButton": {
@@ -66,6 +64,13 @@
   "!Boo": {
     "label": "!Boo"
   },
+  "booSound": {
+    "name": "booSound",
+    "type": "sound-input",
+    "label": "Boo sound",
+    "value": ""
+  },
+
   "booBodyImage": {
     "type": "image-input",
     "label": "Boo body Image"
