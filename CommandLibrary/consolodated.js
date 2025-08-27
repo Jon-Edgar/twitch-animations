@@ -10,6 +10,7 @@ let timerInterval;
 let animationCooldown = 4; // in seconds; current animatino is ~4s
 let seconds = 0;
 let animationCDFlag = false;
+let playAnimationFlag;
 
 // !lurk
 const LURK_TYPES = { TOP: "top", RIGHT: "right", BOTTOM: "bottom", LEFT: "left" };
@@ -429,6 +430,8 @@ window.addEventListener("onWidgetLoad", function (obj) {
 
   const fieldData = obj.detail.fieldData;
 
+  playAnimationFlag = fieldData.animationCheckbox
+
   // !subscribe
   const pawImage = fieldData["pawImage"];
   pawImageElement.src = pawImage;
@@ -502,8 +505,7 @@ window.addEventListener("onWidgetLoad", function (obj) {
 window.addEventListener("onEventReceived", function (obj) {
   if (!obj) return;
 
-  console.log("incoming event")
-  console.log(obj)
+  if (!playAnimationFlag) return
 
   const listener = obj.detail.listener;
   const eventListener = obj.detail.event.listener;
