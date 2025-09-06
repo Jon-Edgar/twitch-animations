@@ -220,7 +220,7 @@ window.addEventListener("onEventReceived", function (obj) {
       SE_API.store.get("state").then((obj) => {
         console.log("global state = ", obj);
       });
-    } else if (buttonCommand === "resetStateButton") {
+    } else if (buttonCommand === BUTTON_TYPES.RESET) {
       SE_API.store.set("state", tempState);
     }
   }
