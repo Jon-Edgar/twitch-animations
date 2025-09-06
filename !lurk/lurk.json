@@ -7,24 +7,20 @@
     "type": "button",
     "label": "print global state"
   },
-
-  "animationCheckbox": {
-    "type": "checkbox",
-    "label": "Allow animations?"
+  "resetStateButton": {
+    "type": "button",
+    "label": "reset state"
   },
-
   "lurkButton": {
     "type": "button",
     "label": "Test !Lurk"
   },
-
   "lurkSound": {
     "name": "lurkSound",
     "type": "sound-input",
     "label": "Lurk sound",
     "value": ""
   },
-
   "lurkerImage": {
     "type": "image-input",
     "label": "Lurker Image"

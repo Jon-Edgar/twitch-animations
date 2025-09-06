@@ -19,28 +19,29 @@ let LISTENER_TYPES,
   animationOnCDFlag, // are animations on CD?
   state = {};
 
-// const tempState = {
-//   playAnimationFlag: true, // allow animations to be played?
-//   animationOnCDFlag: false,
-//   types: {
-//     LISTENER_TYPES: {
-//       MESSAGE: "message",
-//       BUTTON: "widget-button",
-//       CHANNEL_POINTS: "channelPointsRedemption",
-//     },
-//     BUTTON_TYPES: {
-//       LURK: "lurkButton",
-//       GHOST: "ghostButton",
-//       BOO: "booButton",
-//       LOCAL: "localStateButton",
-//       GLOBAL: "globalStateButton",
-//     },
-//     COMMAND_TYPES: { LURK: "!lurk", GHOST: "!ghost", BOO: "!boo" },
-//   },
-//   constants: {
-//     windowData: { x: 1920, y: 1080 },
-//   },
-// };
+const tempState = {
+  playAnimationFlag: true, // allow animations to be played?
+  animationOnCDFlag: false,
+  types: {
+    LISTENER_TYPES: {
+      MESSAGE: "message",
+      BUTTON: "widget-button",
+      CHANNEL_POINTS: "channelPointsRedemption",
+    },
+    BUTTON_TYPES: {
+      LURK: "lurkButton",
+      GHOST: "ghostButton",
+      BOO: "booButton",
+      LOCAL: "localStateButton",
+      GLOBAL: "globalStateButton",
+      RESET: "resetStateButton",
+    },
+    COMMAND_TYPES: { LURK: "!lurk", GHOST: "!ghost", BOO: "!boo" },
+  },
+  constants: {
+    windowData: { x: 1920, y: 1080 },
+  },
+};
 
 const initializeState = () => {
   SE_API.store.get("state").then((obj) => {
@@ -113,8 +114,8 @@ const startLurk = (location = "") => {
   const lurkDistance = 530;
 
   if (location === LURK_TYPES.TOP) {
-    const randX = getRandomNumber(20, 1280);
-    const lurkStart = 1200;
+    const randX = getRandomNumber(20, 1350);
+    const lurkStart = 1100;
     timeline
       .fromTo(
         "#lurk-image",
@@ -125,8 +126,8 @@ const startLurk = (location = "") => {
       .set("#lurk-image", { scaleX: 1, delay: 0.5 })
       .to("#lurk-image", { x: randX, y: -lurkStart, duration: 1, delay: 2 });
   } else if (location === LURK_TYPES.RIGHT) {
-    const randY = getRandomNumber(-250, 175);
-    const lurkStart = 2220;
+    const randY = getRandomNumber(-250, 275);
+    const lurkStart = 2260;
     timeline
       .fromTo(
         "#lurk-image",
@@ -137,8 +138,8 @@ const startLurk = (location = "") => {
       .set("#lurk-image", { scaleX: 1, delay: 0.5 })
       .to("#lurk-image", { x: lurkStart, y: randY, duration: 1, delay: 2 });
   } else if (location === LURK_TYPES.BOTTOM) {
-    const randX = getRandomNumber(0, 1280);
-    const lurkStart = 1080;
+    const randX = getRandomNumber(0, 1400);
+    const lurkStart = 1160;
     timeline
       .fromTo(
         "#lurk-image",
@@ -149,8 +150,8 @@ const startLurk = (location = "") => {
       .set("#lurk-image", { scaleX: 1, delay: 0.5 })
       .to("#lurk-image", { x: randX, y: lurkStart, duration: 1, delay: 2 });
   } else if (location === LURK_TYPES.LEFT) {
-    const randY = getRandomNumber(-250, 175);
-    const lurkStart = -900;
+    const randY = getRandomNumber(-250, 280);
+    const lurkStart = -835;
     timeline
       .fromTo(
         "#lurk-image",
@@ -179,6 +180,8 @@ window.addEventListener("onWidgetLoad", function (obj) {
   if (!obj) return;
 
   initializeState();
+
+  // SE_API.store.set("state", tempState); return;
 
   const fieldData = obj.detail.fieldData;
 
@@ -217,6 +220,8 @@ window.addEventListener("onEventReceived", function (obj) {
       SE_API.store.get("state").then((obj) => {
         console.log("global state = ", obj);
       });
+    } else if (buttonCommand === "resetStateButton") {
+      SE_API.store.set("state", tempState);
     }
   }
 });
