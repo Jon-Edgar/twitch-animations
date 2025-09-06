@@ -1,0 +1,32 @@
+{
+  "localStateButton": {
+    "type": "button",
+    "label": "print local state"
+  },
+  "globalStateButton": {
+    "type": "button",
+    "label": "print global state"
+  },
+
+  "animationCheckbox": {
+    "type": "checkbox",
+    "label": "Allow animations?"
+  },
+
+  "lurkButton": {
+    "type": "button",
+    "label": "Test !Lurk"
+  },
+
+  "lurkSound": {
+    "name": "lurkSound",
+    "type": "sound-input",
+    "label": "Lurk sound",
+    "value": ""
+  },
+
+  "lurkerImage": {
+    "type": "image-input",
+    "label": "Lurker Image"
+  }
+}
