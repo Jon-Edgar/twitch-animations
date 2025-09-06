@@ -223,5 +223,13 @@ window.addEventListener("onEventReceived", function (obj) {
     } else if (buttonCommand === BUTTON_TYPES.RESET) {
       SE_API.store.set("state", tempState);
     }
+  } else if (message[0] === "!") {
+    const data = obj.detail.event.data;
+    const command = data.text.split(" ")[0].toLowerCase();
+
+    // commands
+    if (command === COMMAND_TYPES.LURK) {
+      handleLurk();
+    }
   }
 });
